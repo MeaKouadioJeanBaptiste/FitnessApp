@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "PulseTrack",
+    "slug": "pulsetrack-fitness",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pulsetrack.fitness",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "PulseTrack lit vos données d'activité, fréquence cardiaque et sommeil pour analyser vos performances.",
+        "NSHealthUpdateUsageDescription": "PulseTrack écrit vos séances et calories dans Apple Santé pour un suivi unifié.",
+        "NSCameraUsageDescription": "PulseTrack utilise la caméra arrière et le flash pour mesurer votre fréquence cardiaque en temps réel par photopléthysmographie (contact du doigt).",
+        "UIBackgroundModes": ["fetch", "remote-notification"]
+      }
+    },
+    "android": {
+      "package": "com.pulsetrack.fitness",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0D14",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.FLASHLIGHT",
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.BODY_SENSORS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.POST_NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-sharing",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Autoriser PulseTrack à utiliser la caméra et le flash pour mesurer votre rythme cardiaque par contact."
+        }
+      ]
+    ]
+  }
+}
